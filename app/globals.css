@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+
+@theme{
+    --breakpoint-initial: 0px;
+    --breakpoint-md:768px,
+    --breakpoint-lg:1024px,
+    --breakpoint-xl:1280px,
+    --breakpoint-2xl:1536px;
+    --breakpoint-3xl:1920px;
+    --breakpoint-4xl:2560px;
+    --color-lightBlue:rgba(168,192,255,1);
+    --color-mediumBlue:rgba(63,43,150,0.9);
+    --color-darkBlue:rgba(0,0,0,0.9);
+    --color-backgoundGray:#f2f2f2;
+    --color-btnRed:#c93b31;
+}
+
+
+:root{
+    background-color: #F4F6F8;
+}
+
+.clip-beam {
+  clip-path: polygon(0% 0%, 40% 0%, 0% 40%);
+}

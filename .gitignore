@@ -1,0 +1,11 @@
+# Build and cache folders
+.next/
+out/
+.vercel/
+node_modules/
+dist/
+*.log
+
+# Env variables
+.env
+.env.*.local
