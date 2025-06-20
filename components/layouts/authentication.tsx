@@ -1,5 +1,6 @@
 "use client";
 import { ChevronLeft } from "lucide-react";
+import { signIn } from "next-auth/react";
 import { useForm, SubmitHandler } from "react-hook-form";
 
 
@@ -60,10 +61,13 @@ export function Authentication() {
                         <button
                             type="submit"
                             className="mt-4 bg-gradient-to-r cursor-pointer  from-transparent via-mediumBlue to-transparent text-white font-semibold py-2 rounded hover:scale-105 transition-transform border-2 border-mediumBlue "
+
                         >
                             Create Account
                         </button>
                     </form>
+
+                    <button className="mt -12 " onClick={() => signIn("google", { callbackUrl: "/dashboard/123" })} >Google</button>
                 </div>
             </div>
         </div>

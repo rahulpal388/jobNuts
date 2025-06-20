@@ -16,7 +16,7 @@ export const serviceCard: IServiceCard[] = [
     {
         // icon: <ArrowRight/>,
         title: "House Cleaning",
-        description: "Deep home cleaning services including kitchen, bathroom, and full-house sanitization — spotless and hassle-free.",
+        description: "Deep home cleaning services including kitchen, bathroom, and full-house sanitization — spotless.",
         href: "/service/house-cleaning"
     },
 ]

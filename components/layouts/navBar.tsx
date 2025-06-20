@@ -1,5 +1,5 @@
 "use client"
-import { AlignLeft } from "lucide-react"
+import { AlignLeft, Moon, SunMoon } from "lucide-react"
 import { Button } from "../ui/button"
 import { useState } from "react"
 import { SideBar } from "./sideBar"
@@ -53,12 +53,13 @@ export function NavBar() {
                 className="flex justify-between items-center py-2  fixed top-0   left-0 w-full   px-12  z-50 backdrop-blur-md   ">
                 {/* logo */}
                 <div className="max-lg:hidden">
-                    <h1 className="lg:text-3xl text-xl font-light italic tracking-wider  text-black">JobNuts</h1>
+                    <h1 className="lg:text-3xl text-xl font-light italic tracking-wider  dark:text-background text-foregroun
+                    ">JobNuts</h1>
                 </div>
 
                 <div className="hidden max-lg:block">
                     <div className="  ">
-                        <AlignLeft className="cursor-pointer size-8 " onClick={() => { setSideBarOpen(prev => !prev) }} />
+                        <AlignLeft className="cursor-pointer size-8 text-foreground dark:text-background " onClick={() => { setSideBarOpen(prev => !prev) }} />
                     </div>
                     <SideBar setSideBarOpen={setSideBarOpen} isSideBarOpen={isSideBarOpen} />
                 </div>
@@ -75,7 +76,7 @@ export function NavBar() {
                                 }}
 
                                 key={i} className="cursor-pointer p-2">
-                                <h4 className="xl:text-lg text-black " >{item.name}</h4>
+                                <h4 className="xl:text-lg dark:text-background text-foreground " >{item.name}</h4>
                                 <motion.div
                                     initial={{
                                         width: 0
@@ -89,7 +90,8 @@ export function NavBar() {
                 </div>
                 {/* action items */}
                 <div className="flex gap-6 items-center max-sm:hidden ">
-                    <a href="#" className="text-black">Customer Login</a>
+                    <SunMoon className="dark:text-background text-foreground cursor-pointer " />
+                    <a href="#" className="dark:text-background text-foreground">Customer Login</a>
                     <Button type="Action" onClick={() => { router.push("/auth/signin") }} name="Sign in" />
                 </div>
             </motion.div >

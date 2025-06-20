@@ -4,7 +4,7 @@ export default function Footer() {
 
     return (
         <>
-            <div className="flex  min-h-40 px-12 py-4 gap-20 bg-darkBlue " >
+            <div className="flex  min-h-72 px-12 bg-muted-foreground  py-12 gap-20 bg-darkBlue " >
                 <h1 className="text-2xl font-light italic text-white ">JobNut</h1>
                 <div>
                     <ul className="flex flex-col gap-1 text-white">

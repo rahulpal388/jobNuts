@@ -1,5 +1,5 @@
 import { ChevronLeft } from "lucide-react";
-import { navItems } from "./navBar";
+import { navItems } from "../../constant/navConstant";
 import { Dispatch, SetStateAction } from "react";
 import { motion, AnimatePresence } from "motion/react"
 import { Button } from "../ui/button";

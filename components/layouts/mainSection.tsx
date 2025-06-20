@@ -8,6 +8,7 @@ import { BriefcaseBusiness, MapPin } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 // bg-[radial-gradient(circle,_rgba(255,255,255,1)_0%,_rgba(184,184,184,1)_50%,_rgba(255,255,255,1)_100%)]
+// bg-[radial-gradient(circle,lightBlue_30%,lightBlue_40%,mediumBlue_100%)]
 
 export function MainSection() {
     const locationRef = React.useRef<HTMLInputElement>(null);
@@ -15,9 +16,8 @@ export function MainSection() {
     const router = useRouter();
     return (
         <>
-            <div className=" flex h-screen w-screen  lg:gap-28 justify-center  bg-bg-yellow-400 items-center pt-36 xl:px-40  pb-12 bg-[radial-gradient(circle,lightBlue_30%,lightBlue_40%,mediumBlue_100%)]
-">
-                <div className="flex gap-12 justify-center items-center  w-full ">
+            <div className=" flex h-screen w-screen  lg:gap-28 justify-center  bg-bg-yellow-400 items-center  xl:px-40 pt-[12%]  pb-12  dark:text-background text-foreground ">
+                <div className="flex  gap-12 justify-center items-center  w-full ">
                     <div className=" flex  w-full   flex-col  items-center   ">
 
 
@@ -38,7 +38,7 @@ export function MainSection() {
                                 ease: "easeInOut"
                             }}
 
-                            className="text-6xl text-center font-bold 3xl:text-[8rem] max-w-[80rem]  ">Every Home Service One App  Zero Hassles</motion.h1>
+                            className="lg:text-6xl  text-5xl px-4  text-center font-bold 3xl:text-[8rem] max-w-[80rem] [mask-image:linear-gradient(to_bottom,rgba(0,0,0,0.4)_5%,rgba(0,0,0,1)_55%)]  ">Every Home Service One App <div className="text-red-800"> Zero Hassles</div></motion.h1>
 
                         <motion.p
 
@@ -57,7 +57,7 @@ export function MainSection() {
                                 ease: "easeInOut"
                             }}
 
-                            className="mt-6 mb-20 text-center 3xl:text-3xl ">Book trusted pros for repairs, cleaning, and more — fast, easy, and reliable.</motion.p>
+                            className="mt-6 mb-20 text-center xs:text-lg text-xs px-4  tracking-wide text-background  dark:bg-foreground ">Book trusted pros for repairs, cleaning, and more — fast, easy, and reliable.</motion.p>
 
                         <motion.div
 
@@ -75,13 +75,13 @@ export function MainSection() {
                                 duration: 1.5,
                                 ease: "easeInOut"
                             }}
-                            className="flex flex-col gap-4 justify-center items-center w-full "
+                            className="flex flex-col  gap-8 justify-center items-center w-full "
                         >
-                            <div className="flex gap-4 mb-4">
-                                <InputIcon type="text" ref={locationRef} placeholder="Enter location" icon={<MapPin />} />
-                                <InputIcon type="text" ref={serviceRef} placeholder="Enter Service" icon={<BriefcaseBusiness />} />
+                            <div className="flex max-sm:flex-col gap-8  mb-4">
+                                <InputIcon type="text" ref={locationRef} placeholder="Enter location" icon={<MapPin className=" stroke-accent-foreground dark:stroke-background " />} />
+                                <InputIcon type="text" ref={serviceRef} placeholder="Enter Service" icon={<BriefcaseBusiness className="stroke-accent-foreground dark:stroke-background " />} />
                             </div>
-                            <Button type="Action" name="Explore Service" onClick={() => {
+                            <Button type="Action" name="Search Service" onClick={() => {
                                 if (!locationRef.current?.value || !serviceRef.current?.value) {
                                     alert("Please enter both location and service");
                                     return;

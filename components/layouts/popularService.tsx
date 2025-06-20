@@ -8,7 +8,7 @@ import { ArrowRight } from "lucide-react";
 
 
 
-export function PopularSerrvice() {
+export function PopularService() {
     const ref = useRef<HTMLDivElement>(null);
     const { scrollYProgress, scrollY } = useScroll({
         target: ref,
@@ -33,10 +33,10 @@ export function PopularSerrvice() {
                             y: translateTitle
 
                         }}
-                        className="text-4xl font-bold text-blue-950 text-center  ">Popular Service</motion.h1>
+                        className="text-4xl font-bold dark:text-background text-foreground text-center  ">Popular Service</motion.h1>
 
                 </div>
-                <div className="  flex gap-6 flex-wrap justify-center items-center">
+                <div className="  flex gap-6 flex-wrap px-4 justify-evenly items-center">
                     {serviceCard.map((item, i) => (
                         <ServiceCard key={i} title={item.title} description={item.description} href={item.href} />
                     ))}
