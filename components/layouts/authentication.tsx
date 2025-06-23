@@ -1,6 +1,7 @@
 "use client";
-import { ChevronLeft } from "lucide-react";
+import { ChevronLeft, Eye, EyeOff } from "lucide-react";
 import { signIn } from "next-auth/react";
+import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 
 
@@ -13,6 +14,7 @@ interface IInputs {
 
 
 export function Authentication() {
+    const [isViewPassword, setIsViewPassword] = useState<Boolean>(false);
     // const { handleSubmit, register } = useForm<IInputs>();
 
 
@@ -25,49 +27,67 @@ export function Authentication() {
     }
 
     return (
-        <div className="flex justify-center items-center min-h-screen ">
+        <div className="flex dark:bg-foreground bg-background justify-center items-center min-h-screen ">
             <div className="w-full 3xl:w-[60rem] max-w-md min-h-[28rem] bg-gray-200 rounded-lg shadow-lg py-8 px-6 mx-4">
                 <div className="flex  items-center mb-6  ">
                     <div className=" flex  px-1 items-center cursor-pointer " onClick={backHome} >
-                        <ChevronLeft className="stroke-blue-950" />
-                        <span className="text-blue-950 text-sm ml-1">Back to home</span>
+                        <ChevronLeft className="stroke-destructive" />
+                        <span className="text-destructive text-sm ml-1">Back to home</span>
                     </div>
                 </div>
-                <div className="flex flex-col gap-10">
+
+                <div className="flex flex-col gap-4">
                     <div className="flex flex-col items-center">
-                        <h1 className="text-3xl text-blue-950 font-bold">Create Account</h1>
-                        <p className="text-sm text-center text-neutral-500 mt-2">
+                        <h1 className="text-3xl text-destructive font-bold">Create Account</h1>
+                        <p className="text-sm text-center text-neutral-600 mt-2">
                             Enter your username, email and password to create your account
+
                         </p>
+                        <div className="mt-4  ">
+                            <img src="/googleIcon.svg" className="cursor-pointer  " alt="google" onClick={() => signIn("google")} />
+                        </div>
+                        <div className="flex w-full items-center gap-2 mt-2 ">
+                            <div className="w-full border-t border-dashed border-destructive"></div>
+                            <div className="text-gray-600">or</div>
+                            <div className="w-full border-t border-dashed border-destructive"></div>
+                        </div>
                     </div>
+
+
                     <form className="flex flex-col gap-4  ">
                         <input
                             // {...register("username")}
                             placeholder="Username"
-                            className="px-4 py-2 rounded border border-mediumBlue focus:outline-none focus:ring-2 focus:ring-mediumBlue"
-                        />
-                        <input
-                            // {...register("email")}
-                            type="email"
-                            placeholder="Email"
-                            className="px-4 py-2 rounded border border-mediumBlue focus:outline-none focus:ring-2 focus:ring-mediumBlue"
+                            className="px-4 py-2 rounded border border-destructive focus:outline-none focus:ring-1 focus:ring-destructive"
                         />
                         <input
                             // {...register("password")}
-                            type="password"
-                            placeholder="Password"
-                            className="px-4 py-2 rounded border border-mediumBlue focus:outline-none focus:ring-2 focus:ring-mediumBlue"
+                            type="email"
+                            placeholder="Email"
+                            className="px-4 py-2 rounded border border-destructive focus:outline-none focus:ring-1 focus:ring-destructive"
                         />
+                        <div className="flex gap-2 items-center justify-between px-4 rounded border border-destructive  focus-within:outline-none focus-within:ring-1 focus-within:ring-destructive  ">
+                            <input
+                                // {...register("email")}
+                                type={isViewPassword ? "text" : "password"}
+                                placeholder="Password"
+                                className=" py-2  outline-none  w-full "
+                            />
+                            <div className="cursor-pointer" onClick={() => setIsViewPassword(prev => !prev)} >
+                                {isViewPassword ? <Eye /> : <EyeOff />}
+                            </div>
+                        </div>
+
                         <button
                             type="submit"
-                            className="mt-4 bg-gradient-to-r cursor-pointer  from-transparent via-mediumBlue to-transparent text-white font-semibold py-2 rounded hover:scale-105 transition-transform border-2 border-mediumBlue "
+                            className=" bg-destructive text-white mt-4  cursor-pointer  font-semibold py-2 rounded  "
 
                         >
                             Create Account
                         </button>
                     </form>
 
-                    <button className="mt -12 " onClick={() => signIn("google", { callbackUrl: "/dashboard/123" })} >Google</button>
+
                 </div>
             </div>
         </div>

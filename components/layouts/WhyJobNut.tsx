@@ -2,8 +2,8 @@
 export function WhyJobNut() {
     return (
         <>
-            <div className=" mt-12 flex justify-center items-center  px-4 ">
-                <div className="max-w-4xl p-8 border dark:border-border rounded-lg shadow-md">
+            <div className="  mt-12 flex justify-center items-center  px-4 ">
+                <div className="max-w-4xl p-8 bg-card dark:bg-card-foreground  border dark:border-border rounded-lg shadow-md">
                     <h1 className="text-3xl font-bold dark:text-background text-foreground mb-4">Why Choose JobNut?</h1>
                     <p className="dark:text-background text-foreground mb-6">
                         JobNut is an on-demand service platform that helps you hire verified local professionals for household tasks like plumbing, cleaning, and repairs — in just a few taps.

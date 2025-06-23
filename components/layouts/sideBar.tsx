@@ -1,14 +1,18 @@
+'use client'
 import { ChevronLeft } from "lucide-react";
 import { navItems } from "../../constant/navConstant";
 import { Dispatch, SetStateAction } from "react";
 import { motion, AnimatePresence } from "motion/react"
 import { Button } from "../ui/button";
+import { useRouter } from "next/navigation";
 
 
 export function SideBar({ setSideBarOpen, isSideBarOpen }: {
     setSideBarOpen: Dispatch<SetStateAction<boolean>>,
     isSideBarOpen: boolean
 }) {
+
+    const router = useRouter()
 
     return (
         <>
@@ -47,8 +51,9 @@ export function SideBar({ setSideBarOpen, isSideBarOpen }: {
                             ))}
                         </div>
 
+
                         <div className=" ">
-                            <Button className=" absolute bottom-4 left-10 " name="Logout" type="Action" onClick={() => { console.log("Logout") }} />
+                            <Button className=" absolute bottom-20 left-10 " name="SignIn" type="Action" onClick={() => { router.push("/auth/signin") }} />
                         </div>
                     </motion.div>
                 )}
