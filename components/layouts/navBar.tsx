@@ -1,5 +1,5 @@
 "use client"
-import { AlignLeft, Moon, SunMoon } from "lucide-react"
+import { AlignLeft, Bell, Moon, SunMoon } from "lucide-react"
 import { Button } from "../ui/button"
 import { useState } from "react"
 import { SideBar } from "./sideBar"
@@ -61,6 +61,14 @@ export function NavBar() {
 
                 <div className="flex gap-6 items-center  ">
                     <SunMoon className="dark:text-background text-foreground cursor-pointer " />
+                    <div className="relative inline-block">
+
+                        {/* Notification Count */}
+                        <div className="absolute -top-3 -right-1 bg-destructive text-white text-xs font-semibold px-1.5 py-0.5 rounded-full">
+                            12
+                        </div>
+                        <Bell />
+                    </div>
 
                     {/* signin or Login */}
                     <NavAuth />
