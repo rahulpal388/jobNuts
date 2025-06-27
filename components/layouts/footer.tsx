@@ -1,4 +1,4 @@
-import { navItems } from "@/constant/navConstant";
+import { unAuthNavItems } from "@/constant/navConstant";
 
 export default function Footer() {
 
@@ -8,7 +8,7 @@ export default function Footer() {
                 <h1 className="text-2xl font-light italic text-white ">JobNut</h1>
                 <div>
                     <ul className="flex flex-col gap-1 text-white">
-                        {navItems.map((item, index) => (
+                        {unAuthNavItems.map((item, index) => (
                             <li key={index} className="hover:underline cursor-pointer">
                                 {item.name}
                             </li>

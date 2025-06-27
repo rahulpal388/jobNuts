@@ -20,26 +20,22 @@ export default function Home() {
     </div>
   }
 
-  if (status === "unauthenticated") {
 
-    return (
-      <>
-        <div className=" bg-background d dark:bg-foreground overflow-hidden flex flex-col gap-12 bg-backgoundGray ">
-          <NavBar />
-          <MainSection />
-          <PopularService />
-          <WhyJobNut />
-          <Footer />
 
-        </div>
+  return (
+    <>
+      <div className=" bg-background d dark:bg-foreground overflow-hidden flex flex-col gap-12 bg-backgoundGray ">
+        <NavBar />
+        <MainSection />
+        <PopularService />
+        <WhyJobNut />
+        <Footer />
 
-      </>
-    )
-  }
+      </div>
 
-  if (status === "authenticated") {
-    return <div>
-      you are logged in
-    </div>
-  }
+    </>
+  )
+
+
+
 }

@@ -44,7 +44,7 @@ export function Authentication() {
 
                         </p>
                         <div className="mt-4  ">
-                            <img src="/googleIcon.svg" className="cursor-pointer  " alt="google" onClick={() => signIn("google")} />
+                            <img src="/googleIcon.svg" className="cursor-pointer  " alt="google" onClick={() => signIn("google", { callbackUrl: '/' })} />
                         </div>
                         <div className="flex w-full items-center gap-2 mt-2 ">
                             <div className="w-full border-t border-dashed border-destructive"></div>

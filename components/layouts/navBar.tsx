@@ -5,7 +5,8 @@ import { useState } from "react"
 import { SideBar } from "./sideBar"
 import { motion, scale } from "motion/react"
 import { useRouter } from "next/navigation"
-import { navItems } from "@/constant/navConstant"
+import { NavItmes } from "./navItems"
+import { NavAuth } from "./navAuth"
 
 
 
@@ -15,20 +16,6 @@ import { navItems } from "@/constant/navConstant"
 export function NavBar() {
     const [isSideBarOpen, setSideBarOpen] = useState<boolean>(false);
     const router = useRouter()
-    const varient = {
-        draw: {
-            opacity: 0.8,
-
-        }
-    }
-    const childVarient = {
-        draw: {
-            width: "100%"
-        }
-    }
-
-
-
     return (
         <>
 
@@ -63,36 +50,21 @@ export function NavBar() {
                     </div>
                     <SideBar setSideBarOpen={setSideBarOpen} isSideBarOpen={isSideBarOpen} />
                 </div>
+
                 {/* navigation items */}
+
                 <div className="flex gap-6 items-center justify-evenly max-lg:hidden   rounded-xl px-4 z-50 3xl:w-[50rem]  ">
-                    {
-                        navItems.map((item, i) => (
-                            <motion.div
-
-                                whileHover={"draw"}
-                                variants={varient}
-                                transition={{
-                                    duration: 0.3
-                                }}
-
-                                key={i} className="cursor-pointer p-2">
-                                <h4 className="xl:text-lg dark:text-background text-foreground " >{item.name}</h4>
-                                <motion.div
-                                    initial={{
-                                        width: 0
-                                    }}
-                                    variants={childVarient}
-
-                                    className=" h-1  bg-btnRed  "></motion.div>
-                            </motion.div>
-                        ))
-                    }
+                    <NavItmes />
                 </div>
+
                 {/* action items */}
+
                 <div className="flex gap-6 items-center max-sm:hidden ">
                     <SunMoon className="dark:text-background text-foreground cursor-pointer " />
-                    <a href="#" className="dark:text-background text-foreground">Customer Login</a>
-                    <Button type="Action" onClick={() => { router.push("/auth/signin") }} name="Sign in" />
+
+                    {/* signin or Login */}
+                    <NavAuth />
+
                 </div>
             </motion.div >
         </>
