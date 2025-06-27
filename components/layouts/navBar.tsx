@@ -59,7 +59,7 @@ export function NavBar() {
 
                 {/* action items */}
 
-                <div className="flex gap-6 items-center max-sm:hidden ">
+                <div className="flex gap-6 items-center  ">
                     <SunMoon className="dark:text-background text-foreground cursor-pointer " />
 
                     {/* signin or Login */}

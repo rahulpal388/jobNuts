@@ -1,3 +1,4 @@
+import Footer from "@/components/layouts/footer"
 import { NavBar } from "@/components/layouts/navBar"
 
 
@@ -9,18 +10,18 @@ export default function SearchLayout({
 }) {
     return (
         <>
-            <div className="w-full h-full bg-backgoundGray  ">
+
+            <div className="w-full h-full dark:bg-foreground bg-background flex flex-col gap-8 ">
                 <div>
                     <NavBar />
                 </div>
-                <div>
-                    <div className="w-full h-full flex justify-center items-center">
-                        <div className="w-full px-20 p-4  ">
-                            {children}
-                        </div>
-                    </div>
+                <div className="px-10 ">
+                    {children}
+
                 </div>
+                <Footer />
             </div>
+
         </>
     )
 }

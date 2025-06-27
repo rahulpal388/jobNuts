@@ -15,7 +15,6 @@ export function NavAuth() {
             {
                 status === "unauthenticated" ? (
                     <div className="flex gap-6 items-center" >
-                        <a href="#" className="dark:text-background text-foreground">Customer Login</a>
                         <Button type="Action" onClick={() => { router.push("/auth/signin") }} name="Sign in" />
                     </div>
                 )
@@ -25,7 +24,7 @@ export function NavAuth() {
                             <div className=" h-10 w-10 rounded-full  ">
                                 {
                                     data.user.image ? (
-                                        <img className="w-full h-full  rounded-full" src={data.user.image} alt="" />
+                                        <img className="w-full h-full  rounded-full" src={data.user.image} alt="profile image" />
                                     )
                                         :
                                         (

@@ -1,9 +1,10 @@
 import { AuthNavItems, unAuthNavItems } from "@/constant/navConstant";
 import { motion } from "motion/react"
 import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 export function NavItmes() {
-
+    const router = useRouter()
     const { data, status } = useSession();
 
     const varient = {
@@ -38,7 +39,7 @@ export function NavItmes() {
                             }}
                             variants={childVarient}
 
-                            className=" h-1  bg-btnRed  "></motion.div>
+                            className=" h-[1px]  bg-destructive  "></motion.div>
                     </motion.div>
                 ))
             )
@@ -53,15 +54,21 @@ export function NavItmes() {
                                 duration: 0.3
                             }}
 
-                            key={i} className="cursor-pointer p-2">
-                            <h4 className="xl:text-lg dark:text-background text-foreground " >{item.name}</h4>
+                            key={i} className=" p-2  ">
+                            <h4 className="xl:text-lg dark:text-background text-foreground cursor-pointer   "
+
+                                onClick={() => {
+                                    router.push(item.url)
+                                }}
+
+                            >{item.name}</h4>
                             <motion.div
                                 initial={{
                                     width: 0
                                 }}
                                 variants={childVarient}
 
-                                className=" h-1  bg-btnRed  "></motion.div>
+                                className=" h-[1px]  bg-destructive  "></motion.div>
                         </motion.div>
                     ))
                 )

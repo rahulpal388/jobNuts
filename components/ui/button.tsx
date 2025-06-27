@@ -11,7 +11,7 @@ const btnColor: {
     Default: "  rounded outline-none dark:text-background text-foreground 3xl:w-fit 3xl:px-4  3xl:h-16 3xl:text-2xl hover:opacity-80  cursor-pointer flex gap-2 justify-center items-center  ",
     Primary: " px-4 py-2 bg-[#27187E] ",
     Secondary: " px-4 py-2 bg-[#27187E]",
-    Action: " px-3 py-2 bg-[#c93b31] itmes-center "
+    Action: " px-3 py-2 bg-[#c93b31]  "
 }
 
 

@@ -17,7 +17,7 @@ export function LocationFilter({ setFilter }: { setFilter: React.Dispatch<React.
                                     setFilter(prev => ({ ...prev, location: [...prev.location, l] }))
                                 }}
                             />
-                            <span className="">{item}</span>
+                            <span className="dark:text-background text-foreground">{item}</span>
                         </label>
                     ))}
                 </div>

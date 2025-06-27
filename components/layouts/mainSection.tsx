@@ -6,6 +6,7 @@ import React, { use } from "react";
 import { InputIcon } from "../ui/inputIcon";
 import { BriefcaseBusiness, MapPin } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { SearchService } from "./searchServices";
 
 // bg-[radial-gradient(circle,_rgba(255,255,255,1)_0%,_rgba(184,184,184,1)_50%,_rgba(255,255,255,1)_100%)]
 // bg-[radial-gradient(circle,lightBlue_30%,lightBlue_40%,mediumBlue_100%)]
@@ -77,71 +78,12 @@ export function MainSection() {
                             }}
                             className="flex flex-col  gap-8 justify-center items-center w-full "
                         >
-                            <div className="flex max-sm:flex-col gap-8  mb-4">
-                                <InputIcon type="text" ref={locationRef} placeholder="Enter location" icon={<MapPin className=" stroke-accent-foreground dark:stroke-background " />} />
-                                <InputIcon type="text" ref={serviceRef} placeholder="Enter Service" icon={<BriefcaseBusiness className="stroke-accent-foreground dark:stroke-background " />} />
+                            <div className="flex flex-col items-center justify-center">
+                                <SearchService serviceRef={serviceRef} locationRef={locationRef} className="flex-col" />
                             </div>
-                            <Button type="Action" name="Search Service" onClick={() => {
-                                if (!locationRef.current?.value || !serviceRef.current?.value) {
-                                    alert("Please enter both location and service");
-                                    return;
-                                }
-                                router.push(`/search?location=${locationRef.current?.value}&service=${serviceRef.current?.value}`)
-                            }} />
                         </motion.div>
                     </div>
-                    {/* <div className="flex gap-4 max-md:hidden">
-                        <div className="flex flex-col gap-4  ">
-                            <motion.img
 
-                                initial={{
-                                    x: -30,
-                                    opacity: 0
-                                }}
-                                animate={{
-                                    x: 0,
-                                    opacity: 1
-                                }}
-                                transition={{
-                                    duration: 0.6,
-                                    ease: "easeInOut"
-                                }}
-
-                                src="/electrician.svg" alt="electrician image" height={250} width={250} className="shadow-blue-200 shadow-md rounded " />
-                            <motion.img
-
-                                initial={{
-                                    y: 30,
-                                    opacity: 0
-                                }}
-                                animate={{
-                                    y: 0,
-                                    opacity: 1
-                                }}
-                                transition={{
-                                    duration: 0.6,
-                                    ease: "easeInOut"
-                                }}
-
-                                src="/plumber.svg" alt="plumber image" height={180} width={180} className="shadow-blue-200 shadow-md rounded " />
-                        </div>
-                        <div className="max-md:hidden">
-                            <motion.img
-                                initial={{
-                                    x: 30,
-                                    opacity: 0
-                                }}
-                                animate={{
-                                    x: 0,
-                                    opacity: 1
-                                }}
-                                transition={{
-                                    duration: 0.6,
-                                    ease: "easeInOut"
-                                }}
-                                src="/kitchen.svg" alt="kitchen cleaning" height={180} width={180} className="shadow-blue-200 shadow-md rounded mt-20 " />
-                        </div>
-                    </div> */}
 
                 </div>
             </div >

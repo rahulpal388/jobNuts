@@ -21,7 +21,7 @@ export function FilterCategory({ setFilter }: { setFilter: React.Dispatch<React.
 
                             value={item}
                         />
-                        <span className=""  >{item}</span>
+                        <span className="dark:text-background text-foreground"  >{item}</span>
                     </label>
 
 

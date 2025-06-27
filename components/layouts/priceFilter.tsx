@@ -14,10 +14,10 @@ export function PriceFilter({ setFilter }: { setFilter: React.Dispatch<React.Set
                         <label className="flex gap-2 items-center" key={i}>
                             <input type="checkbox" value={item}
 
-                               
+
 
                             />
-                            <span className="">{item}</span>
+                            <span className="dark:text-background text-foreground">{item}</span>
                         </label>
                     ))}
                 </div>

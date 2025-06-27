@@ -22,7 +22,7 @@ export function Filter() {
 
     return (
         <>
-            <div>
+            <div >
                 <FilterCategory setFilter={setFilter} />
                 <LocationFilter setFilter={setFilter} />
                 <PriceFilter setFilter={setFilter} />
