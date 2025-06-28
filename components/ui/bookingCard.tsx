@@ -10,7 +10,7 @@ export function BookingCard({ booking }: {
 }) {
     return (
         <>
-            <div className="flex gap-6 justify-between  min-h-40 bg-neutral-800 rounded min-w-[30rem] ">
+            <div className="flex gap-6 justify-between bg-card-foreground min-h-40  rounded min-w-[30rem] ">
                 <div className="flex gap-6">
                     <div>
                         <img src={booking.service.picture} alt="image" className=" rounded-l min-w-32 h-full " />

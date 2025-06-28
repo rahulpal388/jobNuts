@@ -19,7 +19,7 @@ export default function SearchLayout({
                     {children}
 
                 </div>
-                <Footer />
+
             </div>
 
         </>

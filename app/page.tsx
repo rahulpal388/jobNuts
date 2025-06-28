@@ -29,7 +29,6 @@ export default function Home() {
         <MainSection />
         <PopularService />
         <WhyJobNut />
-        <Footer />
 
       </div>
 

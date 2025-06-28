@@ -33,13 +33,13 @@ export function ServiceCard({ title, description, href }: IServiceCard) {
                     ease: "easeInOut"
                 }}
 
-                className="container   bg-card dark:bg-card-foreground  dark:border-border border-[0.5px]  p-4 rounded-xl xl:w-96  md:w-[30%] w-full   transition transform duration-300  ease-in-out hover:-translate-y-3 cursor-pointer shadow-2xs">
+                className="container  bg-card-foreground  dark:border-border border-[0.5px]  p-4 rounded-xl xl:w-96  md:w-[30%] w-full   transition transform duration-300  ease-in-out hover:-translate-y-3 cursor-pointer shadow-2xs">
                 <div >
                     <img src="/electricianIcon.svg" alt="icon" className=" size-16 " />
                     <h1 className="text-2xl font-bold dark:text-background text-foreground ">{title}</h1>
                 </div>
                 <div>
-                    <p className="flex text-sm mt-1 dark:text-background text-foreground   "> {description} </p>
+                    <p className="flex text-sm mt-1 dark:text-chart-3     "> {description} </p>
                 </div>
 
                 <div className="mt-4 flex justify-center">

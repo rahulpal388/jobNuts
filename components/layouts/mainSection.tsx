@@ -58,7 +58,7 @@ export function MainSection() {
                                 ease: "easeInOut"
                             }}
 
-                            className="mt-6 mb-20 text-center xs:text-lg text-xs px-4  tracking-wide text-background  dark:bg-foreground ">Book trusted pros for repairs, cleaning, and more — fast, easy, and reliable.</motion.p>
+                            className="mt-6 mb-20 text-center xs:text-lg text-xs px-4  tracking-wide text-chart-3 ">Book trusted pros for repairs, cleaning, and more — fast, easy, and reliable.</motion.p>
 
                         <motion.div
 
